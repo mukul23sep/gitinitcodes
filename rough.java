@@ -3,7 +3,3 @@ class rough {
         System.out.println("rough");
     }
 }
-
-class mukul {
-
-}
