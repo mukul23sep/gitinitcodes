@@ -1,28 +1,18 @@
-package gitinitcodes;
-
 public class Recursion2 {
-    public static int first = -1;
-    public static int last = -1;
-
-    public static void getIndices(String str, char el, int idx) {
+    public static void printSubseq(String str, int idx, String res) {
         if (idx == str.length()) {
+            System.out.println(res);
             return;
         }
-        if (str.charAt(idx) == el) {
-            if (first == -1) {
-                first = idx;
-            } else {
-                last = idx;
-            }
-        }
-        getIndices(str, el, idx + 1);
+        // choose
+        printSubseq(str, idx + 1, res + str.charAt(idx));
+        // don't choose
+        printSubseq(str, idx + 1, res);
     }
 
     public static void main(String args[]) {
-        String str = "tabcdfghijakkk";
-        char el = 'a';
-        getIndices(str, el, 0);
-        System.out.println("First occurence : " + first);
-        System.out.println("Last occurence : " + last);
+        String str1 = "abc";
+        String str2 = "aaa";
+        printSubseq(str1, 0, "");
     }
 }
