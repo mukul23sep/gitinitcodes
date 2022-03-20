@@ -1,29 +1,28 @@
+package gitinitcodes;
+
 public class Recursion2 {
-    public static int First = -1;
-    public static int Last = -1;
+    public static int first = -1;
+    public static int last = -1;
 
-    public static void FindOccurance(String str, int idx, char element) {
+    public static void getIndices(String str, char el, int idx) {
         if (idx == str.length()) {
-            System.out.println(First);
-            System.out.println(Last);
             return;
-
         }
-        char currchar = str.charAt(idx);
-        if (currchar == element) {
-            if (First == -1)
-                ;
-            First = idx;
-        } else {
-            Last = idx;
-
+        if (str.charAt(idx) == el) {
+            if (first == -1) {
+                first = idx;
+            } else {
+                last = idx;
+            }
         }
-
-        FindOccurance(str, idx + 1, element);
+        getIndices(str, el, idx + 1);
     }
 
     public static void main(String args[]) {
-        String str = "abaacdaefaah";
-        FindOccurance(str, 0, 'b');
+        String str = "tabcdfghijakkk";
+        char el = 'a';
+        getIndices(str, el, 0);
+        System.out.println("First occurence : " + first);
+        System.out.println("Last occurence : " + last);
     }
 }
