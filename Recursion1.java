@@ -1,14 +1,14 @@
 class Recursion1 {
-    public static void printSum(int n, int sum) {
+    public static void printFactorial(int n, int fact) {
         if (n == 0) {
-            System.out.println(sum);
+            System.out.println(fact);
             return;
         }
-        sum += n;
-        printSum(n - 1, sum);
+        fact *= n;
+        printFactorial(n - 1, fact);
     }
 
     public static void main(String args[]) {
-        printSum(5, 0);
+        printFactorial(5, 1);
     }
 }
