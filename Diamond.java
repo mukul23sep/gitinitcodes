@@ -1,4 +1,3 @@
-package Mukul.gitinitcodes;
 
 import java.util.Scanner;
 
